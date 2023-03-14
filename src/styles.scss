@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./animation.scss" as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  ::selection {
+    @apply bg-orangeColor text-black;
+  }
+  html {
+    scroll-behavior: smooth;
+    body {
+      @apply bg-bgLight text-white;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+      hr {
+        @apply border-white;
+      }
+    }
+  }
+}
+@layer utilities {
+  .container {
+    @apply max-w-[1200px] mx-auto px-2;
+  }
+}
+@layer components {
+  .btn {
+    @apply capitalize z-0 relative px-5 py-2 font-medium text-lg bg-orangeColor text-bgDark rounded-full hover:shadow-xl duration-300 overflow-hidden;
+    &::after {
+      @apply absolute -z-10 top-0 left-0 h-full w-0 duration-200 bg-white;
+      content: "";
+    }
+    &:hover {
+      &::after {
+        @apply w-full;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+footer {
+  h3 {
+    @apply text-orangeColor text-2xl font-bold pb-8;
+  }
+  ul {
+    li {
+      @apply text-sm font-[15px] leading-10 hover:text-orangeColor duration-300;
+    }
+  }
+}
